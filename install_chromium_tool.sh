@@ -89,10 +89,10 @@ function install() {
   git clone https://chromium.googlesource.com/chromium/tools/depot_tools $INSTALL_DIR/tools/depot_tools
 
 # chromium tools fetch config into depot_tools
-  wget http://github.com/vsyf/chromium_tools/blob/main/chromium_tools.py -O $INSTALL_DIR/tools/depot_tools/fetch_configs/chromium_tools.py
+  wget https://raw.githubusercontent.com/vsyf/chromium_tools/main/chromium_tools.py -O $INSTALL_DIR/tools/depot_tools/fetch_configs/chromium_tools.py
   
   echo "export CHROMIUM_DEPOT_TOOL=\$INSTALL_DIR/tools/depot_tools" >> $INSTALL_RC
-  echo "export PATH=\$PATH:\$CHROMIUM_DEPOT_TOOL" >> $INSTALL_RC
+  echo "export PATH=\$CHROMIUM_DEPOT_TOOL:\$PATH" >> $INSTALL_RC
   
   export CHROMIUM_DEPOT_TOOL=$INSTALL_DIR/tools/depot_tools
   export PATH=$PATH:$CHROMIUM_DEPOT_TOOL

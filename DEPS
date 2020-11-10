@@ -68,7 +68,8 @@ deps = {
     'https://chromium.googlesource.com/external/github.com/llvm/llvm-project/libunwind.git@d999d54f4bca789543a2eb6c995af2d9b5a1f3ed',
 
 
-  hooks = [
+}
+hooks = [
   # Pull clang-format binaries using checked-in hashes.                                             
   {                                                                                                 
     'name': 'clang_format_win',                                                                     
@@ -106,5 +107,4 @@ deps = {
                 '-s', 'src/buildtools/linux64/clang-format.sha1',                                   
     ],                                                                                              
   },  
-  ]
-}
+]
