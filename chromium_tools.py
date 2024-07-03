@@ -14,31 +14,31 @@ class ChromiumTools(config_util.Config):
 
     @staticmethod
     def fetch_spec(props):
-        url = 'git@github.com:vsyf/chromium_tools.git'
+        url = "https://github.com/yoofa/chromium_tools.git"
         solution = {
-            'name': 'chromium_tools',
-            'url': url,
-            'deps_file': 'DEPS',
-            'managed': False,
+            "name": "chromium_tools",
+            "url": url,
+            "deps_file": "DEPS",
+            "managed": False,
         }
         spec = {
-            'solutions': [solution],
+            "solutions": [solution],
         }
-        checkout_type = 'gclient_git'
-        spec_type = '%s_spec' % checkout_type
+        checkout_type = "gclient_git"
+        spec_type = "%s_spec" % checkout_type
         return {
-            'type': checkout_type,
+            "type": checkout_type,
             spec_type: spec,
         }
 
     @staticmethod
     def expected_root(_props):
-        return 'chromium_tools'
+        return "chromium_tools"
 
 
 def main(argv=None):
     return ChromiumTools().handle_args(argv)
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     sys.exit(main(sys.argv))

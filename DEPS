@@ -24,10 +24,10 @@ vars = {
 }
 
 deps = {
-  'chromium_tools/buildtools':                                                                                 
+  'buildtools':                                                                                 
     'https://chromium.googlesource.com/chromium/src/buildtools@1ed99573d57d4b6041261b531cdf876e631cf0bc',
 
-  'chromium_tools/buildtools/linux64': {                                                                       
+  'buildtools/linux64': {                                                                       
     'packages': [                                                                                   
       {                                                                                             
         'package': 'gn/gn/linux-amd64',                                                             
@@ -37,7 +37,7 @@ deps = {
     'dep_type': 'cipd',                                                                             
     'condition': 'checkout_linux',                                                                  
   },                                                                                                
-  'chromium_tools/buildtools/mac': {                                                                           
+  'buildtools/mac': {                                                                           
     'packages': [                                                                                   
       {                                                                                             
         'package': 'gn/gn/mac-amd64',                                                               
@@ -47,7 +47,7 @@ deps = {
     'dep_type': 'cipd',                                                                             
     'condition': 'checkout_mac',                                                                    
   },                                                                                                
-  'chromium_tools/buildtools/win': {                                                                           
+  'buildtools/win': {                                                                           
     'packages': [                                                                                   
       {                                                                                             
         'package': 'gn/gn/windows-amd64',                                                           
@@ -58,13 +58,13 @@ deps = {
     'condition': 'checkout_win',                                                                    
   },                                                                                                
                                                                                                     
-  'chromium_tools/buildtools/clang_format/script':                                                             
+  'buildtools/clang_format/script':                                                             
     'https://chromium.googlesource.com/chromium/llvm-project/cfe/tools/clang-format.git@96636aa0e9f047f17447f2d45a094d0b59ed7917',
-  'chromium_tools/buildtools/third_party/libc++/trunk':                                                        
+  'buildtools/third_party/libc++/trunk':                                                        
     'https://chromium.googlesource.com/external/github.com/llvm/llvm-project/libcxx.git@d9040c75cfea5928c804ab7c235fed06a63f743a',
-  'chromium_tools/buildtools/third_party/libc++abi/trunk':                                                     
+  'buildtools/third_party/libc++abi/trunk':                                                     
     'https://chromium.googlesource.com/external/github.com/llvm/llvm-project/libcxxabi.git@196ba1aaa8ac285d94f4ea8d9836390a45360533',
-  'chromium_tools/buildtools/third_party/libunwind/trunk':                                                     
+  'buildtools/third_party/libunwind/trunk':                                                     
     'https://chromium.googlesource.com/external/github.com/llvm/llvm-project/libunwind.git@d999d54f4bca789543a2eb6c995af2d9b5a1f3ed',
 
 
@@ -80,7 +80,7 @@ hooks = [
                 '--platform=win32',                                                                 
                 '--no_auth',                                                                        
                 '--bucket', 'chromium-clang-format',                                                
-                '-s', 'src/buildtools/win/clang-format.exe.sha1',                                   
+                '-s', 'buildtools/win/clang-format.exe.sha1',                                   
     ],                                                                                              
   },                                                                                                
   {                                                                                                 
@@ -92,7 +92,7 @@ hooks = [
                 '--platform=darwin',                                                                
                 '--no_auth',                                                                        
                 '--bucket', 'chromium-clang-format',                                                
-                '-s', 'src/buildtools/mac/clang-format.sha1',                                       
+                '-s', 'buildtools/mac/clang-format.sha1',                                       
     ],                                                                                              
   },                                                                                                
   {                                                                                                 
@@ -104,7 +104,7 @@ hooks = [
                 '--platform=linux*',                                                                
                 '--no_auth',                                                                        
                 '--bucket', 'chromium-clang-format',                                                
-                '-s', 'src/buildtools/linux64/clang-format.sha1',                                   
+                '-s', 'buildtools/linux64/clang-format.sha1',                                   
     ],                                                                                              
   },  
 ]
