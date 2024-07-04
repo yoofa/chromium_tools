@@ -16,7 +16,7 @@ class ChromiumTools(config_util.Config):
     def fetch_spec(props):
         url = "https://github.com/yoofa/chromium_tools.git"
         solution = {
-            "name": "chromium_tools",
+            "name": ".",
             "url": url,
             "deps_file": "DEPS",
             "managed": False,
@@ -33,7 +33,7 @@ class ChromiumTools(config_util.Config):
 
     @staticmethod
     def expected_root(_props):
-        return "chromium_tools"
+        return "."
 
 
 def main(argv=None):
