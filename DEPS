@@ -1,3 +1,5 @@
+# dependencies file
+#
 use_relative_paths = True
 
 vars = {
@@ -13,8 +15,11 @@ vars = {
   # revisions.
   #
 
+  # buildtools version
+  'buildtools_revision': '94d7b86a83537f8a7db7dccb0bf885739f7a81aa',
+
   # GN CIPD package version.
-  'gn_version': 'git_revision:7d7e8deea36d126397bda2cf924682504271f0e1',
+  'gn_version': 'git_revision:b2afae122eeb6ce09c52d63f67dc53fc517dbdc8',
 
   # When changing these, also update the svn revisions in deps_revisions.gni
   'clang_format_revision': '96636aa0e9f047f17447f2d45a094d0b59ed7917',
@@ -25,13 +30,13 @@ vars = {
 
 deps = {
   'buildtools':                                                                                 
-    'https://chromium.googlesource.com/chromium/src/buildtools@1ed99573d57d4b6041261b531cdf876e631cf0bc',
+    'https://chromium.googlesource.com/chromium/src/buildtools@' + Var('buildtools_revision'),
 
   'buildtools/linux64': {                                                                       
     'packages': [                                                                                   
       {                                                                                             
         'package': 'gn/gn/linux-amd64',                                                             
-        'version': 'git_revision:7d7e8deea36d126397bda2cf924682504271f0e1',                         
+        'version': Var('gn_version'),
       }                                                                                             
     ],                                                                                              
     'dep_type': 'cipd',                                                                             
@@ -41,7 +46,7 @@ deps = {
     'packages': [                                                                                   
       {                                                                                             
         'package': 'gn/gn/mac-amd64',                                                               
-        'version': 'git_revision:7d7e8deea36d126397bda2cf924682504271f0e1',                         
+        'version': Var('gn_version'),
       }                                                                                             
     ],                                                                                              
     'dep_type': 'cipd',                                                                             
@@ -51,7 +56,7 @@ deps = {
     'packages': [                                                                                   
       {                                                                                             
         'package': 'gn/gn/windows-amd64',                                                           
-        'version': 'git_revision:7d7e8deea36d126397bda2cf924682504271f0e1',                         
+        'version': Var('gn_version'),
       }                                                                                             
     ],                                                                                              
     'dep_type': 'cipd',                                                                             
