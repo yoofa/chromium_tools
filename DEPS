@@ -113,3 +113,7 @@ hooks = [
   #   ],                                                                                              
   # },  
 ]
+
+recursedeps = [
+  'buildtools',
+]
