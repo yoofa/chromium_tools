@@ -16,10 +16,10 @@ vars = {
   #
 
   # buildtools version
-  'buildtools_revision': '94d7b86a83537f8a7db7dccb0bf885739f7a81aa',
+  'buildtools_revision': '17495e454aae81b581e8b3caccbb53054509b280',
 
   # GN CIPD package version.
-  'gn_version': 'git_revision:b2afae122eeb6ce09c52d63f67dc53fc517dbdc8',
+  'gn_version': 'git_revision:3357c4f51b1a9e676378c695dd9c7e9911c35ee6',
 
   # When changing these, also update the svn revisions in deps_revisions.gni
   'clang_format_revision': '96636aa0e9f047f17447f2d45a094d0b59ed7917',
@@ -62,17 +62,6 @@ deps = {
     'dep_type': 'cipd',                                                                             
     'condition': 'checkout_win',                                                                    
   },                                                                                                
-                                                                                                    
-  'buildtools/clang_format/script':                                                             
-    'https://chromium.googlesource.com/chromium/llvm-project/cfe/tools/clang-format.git@96636aa0e9f047f17447f2d45a094d0b59ed7917',
-  'buildtools/third_party/libc++/trunk':                                                        
-    'https://chromium.googlesource.com/external/github.com/llvm/llvm-project/libcxx.git@d9040c75cfea5928c804ab7c235fed06a63f743a',
-  'buildtools/third_party/libc++abi/trunk':                                                     
-    'https://chromium.googlesource.com/external/github.com/llvm/llvm-project/libcxxabi.git@196ba1aaa8ac285d94f4ea8d9836390a45360533',
-  'buildtools/third_party/libunwind/trunk':                                                     
-    'https://chromium.googlesource.com/external/github.com/llvm/llvm-project/libunwind.git@d999d54f4bca789543a2eb6c995af2d9b5a1f3ed',
-
-
 }
 hooks = [
   # Pull clang-format binaries using checked-in hashes.                                             
